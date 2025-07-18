@@ -1,16 +1,142 @@
-# 📱 বাংলা টেলিগ্রাম মিনি অ্যাপ
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>বাংলা ভিডিও অ্যাপ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
 
-এই প্রজেক্টটি Telegram WebApp (Mini App) এর একটি বাংলা উদাহরণ।
+    header {
+      background-color: #ff5722;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
 
-## 🧩 ফাইলসমূহ
-- `index.html` - মূল UI
-- `style.css` - ডিজাইন
-- `script.js` - Telegram SDK হ্যান্ডলিং
+    .video-list {
+      padding: 16px;
+    }
 
-## 🚀 কিভাবে চালাবেন?
-1. GitHub Pages থেকে হোস্ট করুন
-2. BotFather দিয়ে Web App URL যুক্ত করুন
-3. Telegram এ বট চালান
+    .video-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
 
----
-মেড ইন বাংলা 🇧🇩
+    .video-card:hover {
+      transform: scale(1.01);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: auto;
+    }
+
+    .video-info {
+      padding: 12px;
+    }
+
+    .video-title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .video-views {
+      font-size: 14px;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 0;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      font-size: 14px;
+      color: #555;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav button:hover {
+      color: #ff5722;
+    }
+
+    nav button.active {
+      color: #ff5722;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    🏠 হোম পেজ
+  </header>
+
+  <div class="video-list">
+    <div class="video-card">
+      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+১" alt="ভিডিও ১" />
+      <div class="video-info">
+        <div class="video-title">পপুলার ভিডিও ১</div>
+        <div class="video-views">২০,০০০ ভিউ</div>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+২" alt="ভিডিও ২" />
+      <div class="video-info">
+        <div class="video-title">পপুলার ভিডিও ২</div>
+        <div class="video-views">৩৫,০০০ ভিউ</div>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+৩" alt="ভিডিও ৩" />
+      <div class="video-info">
+        <div class="video-title">পপুলার ভিডিও ৩</div>
+        <div class="video-views">৫০,০০০ ভিউ</div>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <button class="active">
+      🔥<span>Shorts</span>
+    </button>
+    <button>
+      👥<span>Subscribe</span>
+    </button>
+    <button>
+      💰<span>Monetization</span>
+    </button>
+    <button>
+      ⬆️<span>Video Upload</span>
+    </button>
+  </nav>
+
+</body>
+</html>
