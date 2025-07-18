@@ -22,9 +22,9 @@
       font-weight: bold;
     }
 
-    .video-list {
+    .section {
       padding: 16px;
-      margin-bottom: 70px; /* nav bar space */
+      margin-bottom: 80px;
     }
 
     .video-card {
@@ -33,11 +33,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       margin-bottom: 16px;
       overflow: hidden;
-      transition: transform 0.2s;
-    }
-
-    .video-card:hover {
-      transform: scale(1.01);
     }
 
     .video-thumbnail {
@@ -91,121 +86,95 @@
       color: #ff5722;
       font-weight: bold;
     }
+
+    .monetization-box {
+      background: #fff9e5;
+      border: 1px solid #ffd54f;
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .monetization-box p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    🏠 হোম পেজ
-  </header>
+  <header id="page-title">🏠 হোম পেজ</header>
 
-  <div class="video-list">
-    <!-- ১০টি ভিডিও কার্ড -->
-    <!-- ভিডিও ১ -->
+  <!-- হোম পেজ সেকশন -->
+  <div class="section" id="home-section">
+    <!-- 3 ভিডিও উদাহরণ (চাইলেই বাড়াতে পারেন) -->
     <div class="video-card">
       <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+১" alt="ভিডিও ১" />
       <div class="video-info">
-        <div class="video-title">পপুলার ভিডিও ১</div>
-        <div class="video-views">২০,০০০ ভিউ</div>
+        <div class="video-title">ভিডিও ১</div>
+        <div class="video-views">১২০০ ভিউ</div>
       </div>
     </div>
 
-    <!-- ভিডিও ২ -->
     <div class="video-card">
       <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+২" alt="ভিডিও ২" />
       <div class="video-info">
-        <div class="video-title">পপুলার ভিডিও ২</div>
-        <div class="video-views">২৫,৫০০ ভিউ</div>
+        <div class="video-title">ভিডিও ২</div>
+        <div class="video-views">৮৫০ ভিউ</div>
       </div>
     </div>
 
-    <!-- ভিডিও ৩ -->
     <div class="video-card">
       <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+৩" alt="ভিডিও ৩" />
       <div class="video-info">
-        <div class="video-title">ট্রেন্ডিং ভিডিও ৩</div>
-        <div class="video-views">৪৫,০০০ ভিউ</div>
-      </div>
-    </div>
-
-    <!-- ভিডিও ৪ -->
-    <div class="video-card">
-      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+৪" alt="ভিডিও ৪" />
-      <div class="video-info">
-        <div class="video-title">বিনোদন ভিডিও ৪</div>
-        <div class="video-views">১৮,২০০ ভিউ</div>
-      </div>
-    </div>
-
-    <!-- ভিডিও ৫ -->
-    <div class="video-card">
-      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+৫" alt="ভিডিও ৫" />
-      <div class="video-info">
-        <div class="video-title">শিক্ষামূলক ভিডিও ৫</div>
-        <div class="video-views">১২,৪০০ ভিউ</div>
-      </div>
-    </div>
-
-    <!-- ভিডিও ৬ -->
-    <div class="video-card">
-      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+৬" alt="ভিডিও ৬" />
-      <div class="video-info">
-        <div class="video-title">বাংলা টিউটোরিয়াল ৬</div>
-        <div class="video-views">৩০,৮০০ ভিউ</div>
-      </div>
-    </div>
-
-    <!-- ভিডিও ৭ -->
-    <div class="video-card">
-      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+৭" alt="ভিডিও ৭" />
-      <div class="video-info">
-        <div class="video-title">ভ্রমণ ভিডিও ৭</div>
-        <div class="video-views">২২,০০০ ভিউ</div>
-      </div>
-    </div>
-
-    <!-- ভিডিও ৮ -->
-    <div class="video-card">
-      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+৮" alt="ভিডিও ৮" />
-      <div class="video-info">
-        <div class="video-title">ফান ভিডিও ৮</div>
-        <div class="video-views">৯,৩০০ ভিউ</div>
-      </div>
-    </div>
-
-    <!-- ভিডিও ৯ -->
-    <div class="video-card">
-      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+৯" alt="ভিডিও ৯" />
-      <div class="video-info">
-        <div class="video-title">টেক রিভিউ ৯</div>
-        <div class="video-views">১৬,০০০ ভিউ</div>
-      </div>
-    </div>
-
-    <!-- ভিডিও ১০ -->
-    <div class="video-card">
-      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+১০" alt="ভিডিও ১০" />
-      <div class="video-info">
-        <div class="video-title">গান ভিডিও ১০</div>
-        <div class="video-views">৫০,৫০০ ভিউ</div>
+        <div class="video-title">ভিডিও ৩</div>
+        <div class="video-views">২৩০০ ভিউ</div>
       </div>
     </div>
   </div>
 
+  <!-- মনিটাইজেশন সেকশন (default: hidden) -->
+  <div class="section" id="monetization-section" style="display: none;">
+    <div class="monetization-box">
+      <h3>💰 মনিটাইজেশন চালু করার জন্য শর্ত:</h3>
+      <p>✅ সর্বনিম্ন ১,০০০ ভিউ হতে হবে</p>
+      <p>✅ কমপক্ষে ৫০০ সাবস্ক্রাইবার থাকতে হবে</p>
+      <p style="color:green; margin-top:10px;">🎉 আপনি যোগ্য হলে মনিটাইজেশন চালু হবে</p>
+    </div>
+  </div>
+
+  <!-- নেভিগেশন -->
   <nav>
-    <button class="active">
+    <button onclick="showHome()">
+      🏠<span>Home</span>
+    </button>
+    <button>
       🔥<span>Shorts</span>
     </button>
     <button>
       👥<span>Subscribe</span>
     </button>
-    <button>
+    <button onclick="showMonetization()" class="active">
       💰<span>Monetization</span>
     </button>
     <button>
       ⬆️<span>Upload</span>
     </button>
   </nav>
+
+  <script>
+    function showMonetization() {
+      document.getElementById("home-section").style.display = "none";
+      document.getElementById("monetization-section").style.display = "block";
+      document.getElementById("page-title").innerText = "💰 মনিটাইজেশন";
+    }
+
+    function showHome() {
+      document.getElementById("home-section").style.display = "block";
+      document.getElementById("monetization-section").style.display = "none";
+      document.getElementById("page-title").innerText = "🏠 হোম পেজ";
+    }
+  </script>
 
 </body>
 </html>
