@@ -95,9 +95,32 @@
       margin-top: 20px;
     }
 
-    .monetization-box p {
-      margin: 6px 0;
-      font-size: 15px;
+    .upload-form {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .upload-form input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .upload-form button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .upload-form button:hover {
+      background-color: #388e3c;
     }
   </style>
 </head>
@@ -105,74 +128,76 @@
 
   <header id="page-title">🏠 হোম পেজ</header>
 
-  <!-- হোম পেজ সেকশন -->
+  <!-- হোম সেকশন -->
   <div class="section" id="home-section">
-    <!-- 3 ভিডিও উদাহরণ (চাইলেই বাড়াতে পারেন) -->
     <div class="video-card">
-      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+১" alt="ভিডিও ১" />
+      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+১" />
       <div class="video-info">
         <div class="video-title">ভিডিও ১</div>
         <div class="video-views">১২০০ ভিউ</div>
       </div>
     </div>
-
     <div class="video-card">
-      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+২" alt="ভিডিও ২" />
+      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+২" />
       <div class="video-info">
         <div class="video-title">ভিডিও ২</div>
         <div class="video-views">৮৫০ ভিউ</div>
       </div>
     </div>
+  </div>
 
-    <div class="video-card">
-      <img class="video-thumbnail" src="https://via.placeholder.com/400x200.png?text=ভিডিও+৩" alt="ভিডিও ৩" />
-      <div class="video-info">
-        <div class="video-title">ভিডিও ৩</div>
-        <div class="video-views">২৩০০ ভিউ</div>
-      </div>
+  <!-- মনিটাইজেশন -->
+  <div class="section" id="monetization-section" style="display: none;">
+    <div class="monetization-box">
+      <h3>💰 মনিটাইজেশন চালু করতে হলে:</h3>
+      <p>✔️ অন্তত ১,০০০ ভিউ</p>
+      <p>✔️ অন্তত ৫০০ সাবস্ক্রাইবার</p>
     </div>
   </div>
 
-  <!-- মনিটাইজেশন সেকশন (default: hidden) -->
-  <div class="section" id="monetization-section" style="display: none;">
-    <div class="monetization-box">
-      <h3>💰 মনিটাইজেশন চালু করার জন্য শর্ত:</h3>
-      <p>✅ সর্বনিম্ন ১,০০০ ভিউ হতে হবে</p>
-      <p>✅ কমপক্ষে ৫০০ সাবস্ক্রাইবার থাকতে হবে</p>
-      <p style="color:green; margin-top:10px;">🎉 আপনি যোগ্য হলে মনিটাইজেশন চালু হবে</p>
+  <!-- ভিডিও আপলোড -->
+  <div class="section" id="upload-section" style="display: none;">
+    <div class="upload-form">
+      <h3>📤 ভিডিও আপলোড ফর্ম</h3>
+      <input type="text" placeholder="ভিডিওর নাম লিখুন" />
+      <input type="text" placeholder="ভিডিও লিংক (YouTube বা অন্য)" />
+      <input type="text" placeholder="থাম্বনেইল URL দিন" />
+      <button onclick="alert('✅ ভিডিও আপলোড সফল হয়েছে (ডেমো)!')">আপলোড করুন</button>
     </div>
   </div>
 
   <!-- নেভিগেশন -->
   <nav>
-    <button onclick="showHome()">
-      🏠<span>Home</span>
-    </button>
-    <button>
-      🔥<span>Shorts</span>
-    </button>
-    <button>
-      👥<span>Subscribe</span>
-    </button>
-    <button onclick="showMonetization()" class="active">
-      💰<span>Monetization</span>
-    </button>
-    <button>
-      ⬆️<span>Upload</span>
-    </button>
+    <button onclick="showHome()">🏠<span>Home</span></button>
+    <button>🔥<span>Shorts</span></button>
+    <button>👥<span>Subscribe</span></button>
+    <button onclick="showMonetization()">💰<span>Monetization</span></button>
+    <button onclick="showUpload()">⬆️<span>Upload</span></button>
   </nav>
 
   <script>
-    function showMonetization() {
+    function hideAll() {
       document.getElementById("home-section").style.display = "none";
+      document.getElementById("monetization-section").style.display = "none";
+      document.getElementById("upload-section").style.display = "none";
+    }
+
+    function showHome() {
+      hideAll();
+      document.getElementById("home-section").style.display = "block";
+      document.getElementById("page-title").innerText = "🏠 হোম পেজ";
+    }
+
+    function showMonetization() {
+      hideAll();
       document.getElementById("monetization-section").style.display = "block";
       document.getElementById("page-title").innerText = "💰 মনিটাইজেশন";
     }
 
-    function showHome() {
-      document.getElementById("home-section").style.display = "block";
-      document.getElementById("monetization-section").style.display = "none";
-      document.getElementById("page-title").innerText = "🏠 হোম পেজ";
+    function showUpload() {
+      hideAll();
+      document.getElementById("upload-section").style.display = "block";
+      document.getElementById("page-title").innerText = "⬆️ ভিডিও আপলোড";
     }
   </script>
 
